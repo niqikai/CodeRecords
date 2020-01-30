@@ -1,12 +1,12 @@
 server:
-    port: 8081
+    port: 8082
 
 spring:
     application:
-        name: eureka-api
+        name: eureka-consumer
 eureka:
     instance:
-        instance-id: eureka-api-8081
+        instance-id: eureka-consumer-8082
         prefer-ip-address: true # 访问路径可以显示 IP
     client:
         service-url:
