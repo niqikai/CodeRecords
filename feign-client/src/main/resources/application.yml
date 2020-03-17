@@ -1,0 +1,13 @@
+server:
+    port: 8083
+
+spring:
+    application:
+        name: feign-client
+eureka:
+    instance:
+        instance-id: feign-client-8083
+        prefer-ip-address: true # 访问路径可以显示 IP
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/  # 注册中心访问地址
