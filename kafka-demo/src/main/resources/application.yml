@@ -1,0 +1,18 @@
+### kafka配置
+spring:
+    kafka:
+        producer:
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+            bootstrap-servers: 47.100.61.116:9092
+            retries: 0
+        consumer:
+            bootstrap-servers: 47.100.61.116:9092
+            auto-commit-interval: 100
+            group-id: test
+            auto-offset-reset: latest
+
+ceshi:
+    info:
+        next:
+            name: niqikai
+            age: 13

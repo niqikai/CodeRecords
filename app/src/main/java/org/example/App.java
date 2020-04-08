@@ -7,14 +7,18 @@ import java.util.Arrays;
 /**
  * Hello world!
  *
+ * @author niqikai
  */
 public class App 
 {
+
+    public static void test() {
+        System.out.println("33");
+    }
+
+
     public static void main( String[] args ) throws UnsupportedEncodingException {
 
-        System.out.println(URLDecoder.decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-                , "UTF-8")
-        );
     }
 
 
