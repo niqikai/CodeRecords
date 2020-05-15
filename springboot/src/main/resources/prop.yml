@@ -1,0 +1,11 @@
+prop:
+  list:
+    - jack
+    - tom
+    - adam
+  map:
+    name: kafka
+    age: 18
+  car:
+    brand: benz
+    price: 10000

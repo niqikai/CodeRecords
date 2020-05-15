@@ -1,9 +1,12 @@
+
 server:
     port: 8080
 
 spring:
     application:
         name: eureka-api
+    http:
+        log-request-details: true
 eureka:
     instance:
         instance-id: eureka-api-8080
@@ -11,3 +14,10 @@ eureka:
     client:
         service-url:
             defaultZone: http://localhost:8761/eureka/  # 注册中心访问地址
+debug: true
+#
+#logging:
+#    level:
+#        org:
+#            springframework:
+#                web: debug

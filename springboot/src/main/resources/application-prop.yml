@@ -1,0 +1,12 @@
+prop:
+  list:
+    - jack
+    - porp
+    - tom
+    - adam
+  map:
+    name: kafka
+    age: 90
+  car:
+    brand: benz
+    price: 10000

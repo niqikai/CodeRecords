@@ -1,17 +1,21 @@
 package com.example.springboot;
 
+import com.example.springboot.pojo.User;
+import com.example.springboot.properties.Outer;
+import com.example.springboot.service.Bird;
+import com.example.springboot.service.Plane;
 import com.example.springboot.service.valid.Argue;
 import com.example.springboot.service.valid.ValidService;
 import com.github.javafaker.Faker;
-import org.hibernate.validator.HibernateValidator;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+//
+//import org.springframework.data.mongodb.core.MongoTemplate;
+//import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import java.util.Set;
 
 @SpringBootTest
 class SpringbootApplicationTests {
@@ -20,9 +24,18 @@ class SpringbootApplicationTests {
 
     @Autowired
     private ValidService validService;
+//    @Autowired
+//    private MongoTemplate mongoTemplate;
 
+    @Autowired
+    private Bird bird;
+    @Autowired
+    private Plane plane;
     @Test
     void test() {
+        bird.fly();
+        plane.fly();
+//        mongoTemplate.find(new Query(), User.class, "test");
         System.out.println(faker.address().fullAddress());
         System.out.println(faker.job().position());
         System.out.println(faker.name().fullName());
@@ -52,4 +65,10 @@ class SpringbootApplicationTests {
 
     }
 
+    @Autowired
+    private Outer outer;
+    @Test
+    void testProp() {
+        System.out.println(outer);
+    }
 }
