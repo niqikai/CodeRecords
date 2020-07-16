@@ -1,14 +1,13 @@
 package com.example.springboot;
 
 import com.example.springboot.pojo.User;
-import com.example.springboot.properties.Outer;
 import com.example.springboot.service.Bird;
 import com.example.springboot.service.Plane;
 import com.example.springboot.service.valid.Argue;
 import com.example.springboot.service.valid.ValidService;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 //
@@ -65,10 +64,5 @@ class SpringbootApplicationTests {
 
     }
 
-    @Autowired
-    private Outer outer;
-    @Test
-    void testProp() {
-        System.out.println(outer);
-    }
+
 }

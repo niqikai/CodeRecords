@@ -17,8 +17,8 @@ import java.util.*;
  * @author niqikai
  */
 @Slf4j
-//@Component
-//@Aspect
+@Component
+@Aspect
 public class ControllerLog {
     @Pointcut("execution(public * com.example.springboot.controller..*.*(..))")
     public void controllers() {}

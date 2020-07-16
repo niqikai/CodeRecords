@@ -1,6 +1,6 @@
 package com.example.springboot.controller;
 
-import com.example.springboot.anno.MyAnno;
+import com.example.springboot.anno.Token;
 import com.example.springboot.pojo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
 
     @GetMapping("/hi")
-    public String hello(@MyAnno("niqikai") User user) {
+    public String hello(@Token("Jack") User user) {
         if (user == null) {
             System.out.println("user is null");
             return "fail";
