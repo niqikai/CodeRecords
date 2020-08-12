@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-api
+  cloud:
+    config:
+      label: master
+      name: app
+      profile: test
+      uri: http://localhost:3344/

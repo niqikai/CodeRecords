@@ -23,12 +23,12 @@ public class MyResolver implements HandlerMethodArgumentResolver {
                                   NativeWebRequest nativeWebRequest, WebDataBinderFactory webDataBinderFactory) throws Exception {
 
         Token token = methodParameter.getParameterAnnotation(Token.class);
-
-        if (Objects.nonNull(token)) {
-            return new User(token.value(), 18);
-        }
-
-
-        return new User("default", 18);
+//
+//        if (Objects.nonNull(token)) {
+//            return new User(token.value(), 18);
+//        }
+//
+//
+        return null;
     }
 }

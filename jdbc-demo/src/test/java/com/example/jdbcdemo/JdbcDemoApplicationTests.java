@@ -1,6 +1,10 @@
 package com.example.jdbcdemo;
 
 
+import com.example.jdbcdemo.model.Status;
+import com.example.jdbcdemo.model.Type;
+import com.example.jdbcdemo.model.User;
+import com.example.jdbcdemo.model.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +27,24 @@ public class JdbcDemoApplicationTests {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
+	@Resource
+	private UserMapper userMapper;
+
 	@Test
 	public void contextLoads() throws SQLException {
 		String sql = "select * from user where name = '1' ";
 		jdbcTemplate.queryForList(sql);
 
 	}
+
+
+	@Test
+	public void test() throws SQLException {
+
+		userMapper.insert(new User("hello", Status.DISABLE, Type.ADMIN));
+//		userMapper.insert(new User("hello",  Type.ADMIN));
+
+	}
+
 
 }
