@@ -13,15 +13,19 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Data
+
 @RestController
+@Setter(onMethod_ = {@Autowired})
 public class ConsumerController {
     private final String SERVICE_URI = "http://EUREKA-PROVIDER";
-
+    private DiscoveryClient discoveryClient;
     private RestTemplate restTemplate;
 
     @GetMapping("/consumer-hello")
     public String hello() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("FEIGN-CLIENT");
+
+
         return  restTemplate.getForEntity(SERVICE_URI+"/hello", String.class).getBody();
     }
 

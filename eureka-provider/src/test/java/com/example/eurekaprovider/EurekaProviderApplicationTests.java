@@ -8,6 +8,10 @@ class EurekaProviderApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("start");
+		while (true) {
+			System.out.println("hello");
+		}
 	}
 
 }
