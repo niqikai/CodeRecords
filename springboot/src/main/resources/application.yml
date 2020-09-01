@@ -5,18 +5,15 @@ spring:
   profiles:
     include: prop
 
-  http:
+  codec:
+    log-request-details: true
+  mvc:
     log-request-details: true
 
-#  data:
-#    mongodb:
-#      host: 47.100.61.116
-#      port: 27017
-#      database: admin
+logging:
+    level:
+        org:
+            springframework:
+                web: trace
 
 
-#logging:
-#    level:
-#        org:
-#            springframework:
-#                web: debug

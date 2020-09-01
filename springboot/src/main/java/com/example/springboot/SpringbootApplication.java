@@ -1,13 +1,19 @@
 package com.example.springboot;
 
+import com.example.springboot.common.Result;
+import com.example.springboot.pojo.Pojo;
 import com.github.javafaker.Faker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
 
+@RestController
 @SpringBootApplication
 public class SpringbootApplication {
 
@@ -21,14 +27,10 @@ public class SpringbootApplication {
 		return new Faker(new Locale("zh-CN"));
 	}
 
-
-//	@Bean
-//	public MongoClient mongoClient() {
-//		return new MongoClient("47.100.61.116",27017);
-//	}
-//
-//	@Bean
-//	public MongoTemplate mongoTemplate() {
-//		return new MongoTemplate(mongoClient(), "admin");
-//	}
+	@GetMapping("test")
+	public Result hello(@RequestParam String name, @RequestBody(required = false) Pojo pojo) {
+		System.out.println(pojo);
+		System.out.println("=========");
+		return Result.ofSuccess("hello: " + name);
+	}
 }

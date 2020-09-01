@@ -1,4 +1,13 @@
+GET http://localhost:8080/test?name=niqikai
+Accept: application/json
+
+{
+  "name": "haha"
+}
+
+###
 GET http://localhost:8080/hello/hi
 Accept: application/json
 
 ###
+
